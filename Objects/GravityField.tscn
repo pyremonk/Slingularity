@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Textures/GravityField.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 119.938
+
+[node name="GravityField" type="Area2D"]
+space_override = 2
+gravity_point = true
+gravity = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.247718, 0.217299 )
+scale = Vector2( 1.20208, 1.20208 )
+texture = ExtResource( 1 )
+

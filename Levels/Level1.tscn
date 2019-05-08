@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=1]
+
+[node name="Level1" index="0" instance=ExtResource( 1 )]
+start_dialogue = [ "AutonomousShip-104! You're now online.", "I'm Solas. I'll be guiding you out of the galaxy.", "The central blackhole is suddenly expanding at an alarming rate.", "We must get you out as soon as we can by reaching the jumppoint in each sector.", "You only have enough fuel for a few burns before you're refueled at the jumppoint.", "To launch a burn, click and drag anywhere to set your trajectory and impluse. Release to launch!", "Good luck, 104!" ]
+
+[node name="JumpPoint" parent="." index="1"]
+position = Vector2( 854.783, 299.699 )
+next_level = "Level2"
+

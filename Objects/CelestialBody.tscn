@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/CelestialBody.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Textures/BluePlanet.png" type="Texture" id=2]
+[ext_resource path="res://Objects/GravityField.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 36.6371
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 43.1704
+
+[node name="CelestialBody" type="StaticBody2D" groups=[
+"obstacle",
+]]
+script = ExtResource( 1 )
+override_texture = ExtResource( 2 )
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="GravityField" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -0.379562 )
+gravity = 300.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_CollisionArea_body_entered"]

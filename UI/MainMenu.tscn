@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://UI/Textures/Start.png" type="Texture" id=2]
+[ext_resource path="res://UI/Textures/Background.png" type="Texture" id=3]
+[ext_resource path="res://Levels/Textures/Darkness.png" type="Texture" id=4]
+[ext_resource path="res://UI/Textures/Slingularity_Title.png" type="Texture" id=5]
+[ext_resource path="res://UI/Textures/pyremonk_90.png" type="Texture" id=6]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="Controls"]
+pause_mode = 2
+margin_left = 444.18
+margin_top = 349.387
+margin_right = 590.18
+margin_bottom = 394.387
+texture_normal = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 525.99, 303.764 )
+texture = ExtResource( 3 )
+
+[node name="Darkness" type="Sprite" parent="."]
+position = Vector2( -433, 302 )
+texture = ExtResource( 4 )
+
+[node name="Slingularity_Title" type="Sprite" parent="."]
+position = Vector2( 515.938, 119.186 )
+texture = ExtResource( 5 )
+
+[node name="pyremonk_90" type="TextureButton" parent="."]
+margin_left = 901.901
+margin_top = 480.209
+margin_right = 991.901
+margin_bottom = 570.209
+texture_normal = ExtResource( 6 )
+
+[connection signal="pressed" from="Controls/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="pyremonk_90" to="." method="_on_pyremonk_90_pressed"]

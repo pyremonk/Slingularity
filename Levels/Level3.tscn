@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/CelestialBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Satellite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Textures/RedPlanet.png" type="Texture" id=4]
+[ext_resource path="res://Collectibles/Rescue.tscn" type="PackedScene" id=5]
+
+[node name="Level3" index="0" instance=ExtResource( 1 )]
+start_dialogue = [ "Look! A stray astronaut!", "Rescue them if you can, but it's more important you reach the jumppoint! Hurry!" ]
+
+[node name="JumpPoint" parent="." index="1"]
+position = Vector2( 850.6, 293.947 )
+next_level = "Level4"
+
+[node name="CelestialBody" parent="." index="3" instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 478.481, 190.347 )
+
+[node name="Satellite" parent="CelestialBody" index="4" instance=ExtResource( 3 )]
+
+[node name="CelestialBody2" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 637.975, 365.005 )
+override_texture = ExtResource( 4 )
+
+[node name="Rescue1" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 280.814, 393.244 )
+

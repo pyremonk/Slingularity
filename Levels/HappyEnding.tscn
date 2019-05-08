@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/HappyEnding.gd" type="Script" id=2]
+[ext_resource path="res://UI/Textures/Congrats.png" type="Texture" id=3]
+[ext_resource path="res://UI/Textures/Thanks.png" type="Texture" id=4]
+
+[node name="HappyEnding" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+start_dialogue = [ "You did it, 104! I always knew you could.", "The Glorbox race will survive and destroy all humans throughout the universe thanks to you!" ]
+
+[node name="JumpPoint" parent="." index="1"]
+visible = false
+
+[node name="Player" parent="." index="2"]
+visible = false
+
+[node name="Darkness" parent="." index="4"]
+position = Vector2( -433, 302 )
+
+[node name="Congrats" type="Sprite" parent="." index="5"]
+position = Vector2( 511.008, 93.7487 )
+texture = ExtResource( 3 )
+
+[node name="Thanks" type="Sprite" parent="." index="6"]
+position = Vector2( 528.935, 237.167 )
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="." index="7"]
+pause_mode = 2
+margin_left = 902.0
+margin_top = 558.0
+margin_right = 1004.0
+margin_bottom = 584.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

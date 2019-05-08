@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://VFX/JumpFX.gd" type="Script" id=1]
+
+[node name="JumpFX" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2( 4, 4 )
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.8
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 1 )
+gravity = Vector2( 200, 0 )
+angle = 310.3
+angle_random = 1.0
+color = Color( 0.564706, 0.564706, 0.564706, 1 )
+
